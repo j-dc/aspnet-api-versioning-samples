@@ -1,0 +1,1332 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.AspNet.OData.Versioning.ApiExplorer</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection`1">
+            <content>
+            Provides additional implementation specific to Microsoft ASP.NET Web API.
+            </content>
+            <typeparam name="T">The <see cref="T:System.Type">type</see> of <see cref="T:System.Web.Http.Controllers.IHttpController">controller</see>.</typeparam>
+            <summary>
+            Represents a collection of OData controller action query option convention builders.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection`1.#ctor(Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection`1"/> class.
+            </summary>
+            <param name="controllerBuilder">The associated <see cref="T:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder`1">controller convention builder</see>.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection`1.GetOrAdd(System.Reflection.MethodInfo)">
+            <summary>
+            Gets or adds a controller action convention builder for the specified method.
+            </summary>
+            <param name="actionMethod">The controller action method to get or add the convention builder for.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1">controller action convention builder</see>.</returns>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection`1.Count">
+            <summary>
+            Gets a count of the controller action convention builders in the collection.
+            </summary>
+            <value>The total number of controller action convention builders in the collection.</value>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection`1.TryGetValue(System.Reflection.MethodInfo,Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder{`0}@)">
+            <summary>
+            Attempts to retrieve the controller action convention builder for the specified method.
+            </summary>
+            <param name="actionMethod">The controller action method to get the convention builder for.</param>
+            <param name="actionBuilder">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1">controller action convention builder</see> or <c>null</c>.</param>
+            <returns>True if the <paramref name="actionBuilder">action builder</paramref> is successfully retrieved; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection`1.GetEnumerator">
+            <summary>
+            Returns an iterator that enumerates the controller action convention builders in the collection.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerator`1"/> object.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderExtensions">
+            <content>
+            Provides additional implementation specific to Microsoft ASP.NET Web API.
+            </content>
+            <summary>
+            Provides extension methods for the <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/> and <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderExtensions.AllowOrderBy``1(Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder{``0},System.Int32,System.String[])">
+            <summary>
+            Allows the $orderby query option.
+            </summary>
+            <typeparam name="TController">The type of <see cref="T:System.Web.Http.Controllers.IHttpController">controller</see>.</typeparam>
+            <param name="builder">The extended convention builder.</param>
+            <param name="maxNodeCount">The maximum number of expressions in the $orderby query option or zero to indicate the default.</param>
+            <param name="properties">The array of property names that can appear in the $orderby query option.
+            An empty array indicates that any property can appear in the $orderby query option.</param>
+            <returns>The original <paramref name="builder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderExtensions.AllowOrderBy``1(Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder{``0},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Allows the $orderby query option.
+            </summary>
+            <typeparam name="TController">The type of <see cref="T:System.Web.Http.Controllers.IHttpController">controller</see>.</typeparam>
+            <param name="builder">The extended convention builder.</param>
+            <param name="properties">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of property names that can appear in the $orderby query option.
+            An empty sequence indicates that any property can appear in the $orderby query option.</param>
+            <returns>The original <paramref name="builder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderExtensions.AllowOrderBy``1(Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder{``0},System.String[])">
+            <summary>
+            Allows the $orderby query option.
+            </summary>
+            <typeparam name="TController">The type of <see cref="T:System.Web.Http.Controllers.IHttpController">controller</see>.</typeparam>
+            <param name="builder">The extended convention builder.</param>
+            <param name="properties">The array of property names that can appear in the $orderby query option.
+            An empty array indicates that any property can appear in the $orderby query option.</param>
+            <returns>The original <paramref name="builder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderExtensions.AllowOrderBy(Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder,System.Int32,System.String[])">
+            <summary>
+            Allows the $orderby query option.
+            </summary>
+            <param name="builder">The extended convention builder.</param>
+            <param name="maxNodeCount">The maximum number of expressions in the $orderby query option or zero to indicate the default.</param>
+            <param name="properties">The array of property names that can appear in the $orderby query option.
+            An empty array indicates that any property can appear in the $orderby query option.</param>
+            <returns>The original <paramref name="builder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderExtensions.AllowOrderBy(Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Allows the $orderby query option.
+            </summary>
+            <param name="builder">The extended convention builder.</param>
+            <param name="properties">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of property names that can appear in the $orderby query option.
+            An empty sequence indicates that any property can appear in the $orderby query option.</param>
+            <returns>The original <paramref name="builder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderExtensions.AllowOrderBy(Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder,System.String[])">
+            <summary>
+            Allows the $orderby query option.
+            </summary>
+            <param name="builder">The extended convention builder.</param>
+            <param name="properties">The array of property names that can appear in the $orderby query option.
+            An empty array indicates that any property can appear in the $orderby query option.</param>
+            <returns>The original <paramref name="builder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderExtensions.Action``1(Microsoft.AspNet.OData.Builder.IODataActionQueryOptionsConventionBuilder{``0},System.Linq.Expressions.Expression{System.Action{``0}})">
+            <summary>
+            Gets or creates the convention builder for the specified controller action method.
+            </summary>
+            <typeparam name="TController">The type of controller.</typeparam>
+            <param name="builder">The extended <see cref="T:Microsoft.AspNet.OData.Builder.IODataActionQueryOptionsConventionBuilder`1"/>.</param>
+            <param name="actionExpression">The <see cref="T:System.Linq.Expressions.Expression`1">expression</see> representing the controller action method.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderExtensions.Action``2(Microsoft.AspNet.OData.Builder.IODataActionQueryOptionsConventionBuilder{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Gets or creates the convention builder for the specified controller action method.
+            </summary>
+            <typeparam name="TController">The type of controller.</typeparam>
+            <typeparam name="TResult">The type of action result.</typeparam>
+            <param name="builder">The extended <see cref="T:Microsoft.AspNet.OData.Builder.IODataActionQueryOptionsConventionBuilder`1"/>.</param>
+            <param name="actionExpression">The <see cref="T:System.Linq.Expressions.Expression`1">expression</see> representing the controller action method.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderExtensions.Action(Microsoft.AspNet.OData.Builder.IODataActionQueryOptionsConventionBuilder,System.String,System.Type[])">
+            <summary>
+            Gets or creates the convention builder for the specified controller action method.
+            </summary>
+            <param name="builder">The extended convention builder.</param>
+            <param name="methodName">The name of the action method.</param>
+            <param name="argumentTypes">The optional array of action method argument types.</param>
+            <returns>The original <paramref name="builder"/>.</returns>
+            <remarks>The specified <paramref name="methodName">method name</paramref> must refer to a public, non-static action method.
+            If there is only one corresponding match found, then the <paramref name="argumentTypes">argument types</paramref> are ignored;
+            otherwise, the <paramref name="argumentTypes">argument types</paramref> are used for method overload resolution. Action
+            methods that have the <see cref="T:System.Web.Http.NonActionAttribute"/> applied will also be ignored.</remarks>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1">
+            <content>
+            Provides additional implementation specific to Microsoft ASP.NET Web API.
+            </content>
+            <typeparam name="T">The <see cref="T:System.Type">type</see> of <see cref="T:System.Web.Http.Controllers.IHttpController">controller</see>.</typeparam>
+            <summary>
+            Represents an OData controller action query options convention builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.#ctor(Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/> class.
+            </summary>
+            <param name="controllerBuilder">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1">controller builder</see>
+            the action builder belongs to.</param>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.ControllerBuilder">
+            <summary>
+            Gets the controller builder the action builder belongs to.
+            </summary>
+            <value>The associated <see cref="T:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder`1"/>.</value>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.Action(System.Reflection.MethodInfo)">
+            <summary>
+            Gets or creates the convention builder for the specified controller action method.
+            </summary>
+            <param name="actionMethod">The <see cref="T:System.Reflection.MethodInfo">method</see> representing the controller action.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.Use(Microsoft.AspNet.OData.Query.ODataValidationSettings)">
+            <summary>
+            Uses the specified validation settings for the convention.
+            </summary>
+            <param name="validationSettings">The <see cref="T:Microsoft.AspNet.OData.Query.ODataValidationSettings">validation settings</see> to use.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.Allow(Microsoft.AspNet.OData.Query.AllowedArithmeticOperators)">
+            <summary>
+            Allows the specified arithmetic operators.
+            </summary>
+            <param name="arithmeticOperators">One or more <see cref="T:Microsoft.AspNet.OData.Query.AllowedArithmeticOperators">allowed arithmetic operators</see>.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.Allow(Microsoft.AspNet.OData.Query.AllowedFunctions)">
+            <summary>
+            Allows the specified functions.
+            </summary>
+            <param name="functions">One or more <see cref="T:Microsoft.AspNet.OData.Query.AllowedFunctions">allowed functions</see>.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.Allow(Microsoft.AspNet.OData.Query.AllowedLogicalOperators)">
+            <summary>
+            Allows the specified logical operators.
+            </summary>
+            <param name="logicalOperators">One or more <see cref="T:Microsoft.AspNet.OData.Query.AllowedLogicalOperators">allowed logical operators</see>.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.Allow(Microsoft.AspNet.OData.Query.AllowedQueryOptions)">
+            <summary>
+            Allows the specified query options.
+            </summary>
+            <param name="queryOptions">One or more <see cref="T:Microsoft.AspNet.OData.Query.AllowedQueryOptions">allowed query options</see>.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.AllowSkip(System.Int32)">
+            <summary>
+            Allows the $skip query option.
+            </summary>
+            <param name="max">The maximum value of the $skip query option or zero to indicate no maximum.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.AllowTop(System.Int32)">
+            <summary>
+            Allows the $top query option.
+            </summary>
+            <param name="max">The maximum value of the $top query option or zero to indicate no maximum.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.AllowExpand(System.Int32)">
+            <summary>
+            Allows the $expand query option.
+            </summary>
+            <param name="maxDepth">The maximum depth of the $expand query option or zero to indicate the default.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.AllowAnyAll(System.Int32)">
+            <summary>
+            Allows the 'Any' and 'All' functions in the $filter query option.
+            </summary>
+            <param name="maxExpressionDepth">The maximum expression depth of the 'Any' or 'All' function in a query or zero to indicate the default.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.AllowFilter(System.Int32)">
+            <summary>
+            Allows the $filter query option.
+            </summary>
+            <param name="maxNodeCount">The maximum number of nodes in the $filter query option or zero to indicate the default.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1.AllowOrderBy(System.Int32,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Allows the $orderby query option.
+            </summary>
+            <param name="maxNodeCount">The maximum number of expressions in the $orderby query option or zero to indicate the default.</param>
+            <param name="properties">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of property names that can appear in the $orderby query option.
+            An empty sequence indicates that any property can appear in the $orderby query option.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder`1">
+            <content>
+            Provides additional implementation specific to Microsoft ASP.NET Web API.
+            </content>
+            <typeparam name="T">The <see cref="T:System.Type">type</see> of <see cref="T:System.Web.Http.Controllers.IHttpController">controller</see>.</typeparam>
+            <summary>
+            Represents an OData query options convention builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder`1"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder`1.ActionBuilders">
+            <summary>
+            Gets a collection of controller action convention builders.
+            </summary>
+            <value>A <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection`1">collection</see> of
+            <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1">controller action convention builders</see>.</value>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder`1.Action(System.Reflection.MethodInfo)">
+            <summary>
+            Gets or creates the convention builder for the specified controller action method.
+            </summary>
+            <param name="actionMethod">The <see cref="T:System.Reflection.MethodInfo">method</see> representing the controller action.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder`1.Build(Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionsConventionBuilder">
+            <content>
+            Provides additional implementation specific to Microsoft ASP.NET Web API.
+            </content>
+            <summary>
+            Represents an OData query options convention builder.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionsConventionBuilder.DescriptionProvider">
+            <summary>
+            Gets or sets the provider used to describe query options.
+            </summary>
+            <value>The <see cref="T:Microsoft.AspNet.OData.Builder.IODataQueryOptionDescriptionProvider">provider</see> used to describe OData query options.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionsConventionBuilder.Count">
+            <summary>
+            Gets the count of configured conventions.
+            </summary>
+            <value>The total count of configured conventions.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionsConventionBuilder.ConventionBuilders">
+            <summary>
+            Gets a collection of controller convention builders.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IDictionary`2">collection</see> of <see cref="T:Microsoft.AspNet.OData.Builder.IODataQueryOptionsConventionBuilder">controller convention builders</see>.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionsConventionBuilder.Conventions">
+            <summary>
+            Gets a collection of OData query option conventions.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IList`1">list</see> of <see cref="T:Microsoft.AspNet.OData.Builder.IODataQueryOptionsConvention">OData query option conventions</see>.</value>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataQueryOptionsConventionBuilder.Controller``1">
+            <summary>
+            Gets or creates the convention builder for the specified controller.
+            </summary>
+            <typeparam name="TController">The <see cref="T:System.Type">type</see> of controller to build conventions for.</typeparam>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataQueryOptionsConventionBuilder.Controller(System.Type)">
+            <summary>
+            Gets or creates the convention builder for the specified controller.
+            </summary>
+            <param name="controllerType">The <see cref="T:System.Type">type</see> of controller to build conventions for.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataQueryOptionsConventionBuilder.Add(Microsoft.AspNet.OData.Builder.IODataQueryOptionsConvention)">
+            <summary>
+            Adds a new OData query option convention.
+            </summary>
+            <param name="convention">The <see cref="T:Microsoft.AspNet.OData.Builder.IODataQueryOptionsConvention">convention</see> to be applied.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataQueryOptionsConventionBuilder.ApplyTo(System.Collections.Generic.IEnumerable{System.Web.Http.Description.ApiDescription},Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings)">
+            <summary>
+            Applies the defined OData query option conventions to the specified API description.
+            </summary>
+            <param name="apiDescriptions">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of <see cref="T:System.Web.Http.Description.ApiDescription">API descriptions</see>
+            to apply configured conventions to.</param>
+            <param name="queryOptionSettings">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings">settings</see> used to apply OData query option conventions.</param>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention">
+            <content>
+            Provides additional implementation specific to Microsoft ASP.NET Web API.
+            </content>
+            <summary>
+            Represents an OData query options convention based on <see cref="T:Microsoft.AspNet.OData.Query.ODataValidationSettings">validation settings</see>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.ApplyTo(System.Web.Http.Description.ApiDescription)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.NewParameterDescription(System.String,System.String,System.Type,System.Object)">
+            <summary>
+            Creates a new API parameter description.
+            </summary>
+            <param name="name">The parameter name.</param>
+            <param name="description">The parameter description.</param>
+            <param name="type">The parameter value type.</param>
+            <param name="defaultValue">The parameter default value, if any.</param>
+            <returns>A new <see cref="T:System.Web.Http.Description.ApiParameterDescription">parameter description</see>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.#ctor(Microsoft.AspNet.OData.Query.ODataValidationSettings,Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention"/> class.
+            </summary>
+            <param name="validationSettings">The <see cref="T:Microsoft.AspNet.OData.Query.ODataValidationSettings">validation settings</see> the convention is based on.</param>
+            <param name="settings">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings">settings</see> used by the convention.</param>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.ValidationSettings">
+            <summary>
+            Gets the validation settings used for the query options convention.
+            </summary>
+            <value>The <see cref="T:Microsoft.AspNet.OData.Query.ODataValidationSettings">validation settings</see> for the convention.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.Settings">
+            <summary>
+            Gets the settings for OData query options.
+            </summary>
+            <value>The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings">settings</see> used by the convention.</value>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.NewFilterParameter(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Creates and returns a new parameter descriptor for the $filter query option.
+            </summary>
+            <param name="descriptionContext">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">validation settings</see> used to create the parameter.</param>
+            <returns>A new <see cref="T:System.Web.Http.Description.ApiParameterDescription">parameter description</see>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.NewExpandParameter(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Creates and returns a new parameter descriptor for the $expand query option.
+            </summary>
+            <param name="descriptionContext">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">validation settings</see> used to create the parameter.</param>
+            <returns>A new <see cref="T:System.Web.Http.Description.ApiParameterDescription">parameter description</see>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.NewSelectParameter(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Creates and returns a new parameter descriptor for the $select query option.
+            </summary>
+            <param name="descriptionContext">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">validation settings</see> used to create the parameter.</param>
+            <returns>A new <see cref="T:System.Web.Http.Description.ApiParameterDescription">parameter description</see>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.NewOrderByParameter(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Creates and returns a new parameter descriptor for the $orderby query option.
+            </summary>
+            <param name="descriptionContext">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">validation settings</see> used to create the parameter.</param>
+            <returns>A new <see cref="T:System.Web.Http.Description.ApiParameterDescription">parameter description</see>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.NewTopParameter(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Creates and returns a new parameter descriptor for the $top query option.
+            </summary>
+            <param name="descriptionContext">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">validation settings</see> used to create the parameter.</param>
+            <returns>A new <see cref="T:System.Web.Http.Description.ApiParameterDescription">parameter description</see>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.NewSkipParameter(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Creates and returns a new parameter descriptor for the $skip query option.
+            </summary>
+            <param name="descriptionContext">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">validation settings</see> used to create the parameter.</param>
+            <returns>A new <see cref="T:System.Web.Http.Description.ApiParameterDescription">parameter description</see>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataValidationSettingsConvention.NewCountParameter(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Creates and returns a new parameter descriptor for the $count query option.
+            </summary>
+            <param name="descriptionContext">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">validation settings</see> used to create the parameter.</param>
+            <returns>A new <see cref="T:System.Web.Http.Description.ApiParameterDescription">parameter description</see>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.DefaultODataQueryOptionDescriptionProvider">
+            <summary>
+            Represents the default <see cref="T:Microsoft.AspNet.OData.Builder.IODataQueryOptionDescriptionProvider">OData query option description provider.</see>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.DefaultODataQueryOptionDescriptionProvider.Describe(Microsoft.AspNet.OData.Query.AllowedQueryOptions,Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.DefaultODataQueryOptionDescriptionProvider.DescribeFilter(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Describes the $filter query option.
+            </summary>
+            <param name="context">The current <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">description context</see>.</param>
+            <returns>The query option description.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.DefaultODataQueryOptionDescriptionProvider.DescribeExpand(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Describes the $expand query option.
+            </summary>
+            <param name="context">The current <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">description context</see>.</param>
+            <returns>The query option description.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.DefaultODataQueryOptionDescriptionProvider.DescribeSelect(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Describes the $select query option.
+            </summary>
+            <param name="context">The current <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">description context</see>.</param>
+            <returns>The query option description.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.DefaultODataQueryOptionDescriptionProvider.DescribeOrderBy(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Describes the $orderby query option.
+            </summary>
+            <param name="context">The current <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">description context</see>.</param>
+            <returns>The query option description.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.DefaultODataQueryOptionDescriptionProvider.DescribeTop(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Describes the $top query option.
+            </summary>
+            <param name="context">The current <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">description context</see>.</param>
+            <returns>The query option description.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.DefaultODataQueryOptionDescriptionProvider.DescribeSkip(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Describes the $skip query option.
+            </summary>
+            <param name="context">The current <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">description context</see>.</param>
+            <returns>The query option description.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.DefaultODataQueryOptionDescriptionProvider.DescribeCount(Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Describes the $count query option.
+            </summary>
+            <param name="context">The current <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">description context</see>.</param>
+            <returns>The query option description.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.IODataActionQueryOptionsConventionBuilder`1">
+            <summary>
+            Defines the behavior of an OData query options convention builder for an action.
+            </summary>
+            <typeparam name="T">The type of item the convention builder is for.</typeparam>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.IODataActionQueryOptionsConventionBuilder`1.Action(System.Reflection.MethodInfo)">
+            <summary>
+            Gets or creates a convention builder for the specified controller action method.
+            </summary>
+            <param name="actionMethod">The controller action <see cref="T:System.Reflection.MethodInfo">method</see>
+            to get or create a convention for.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder`1"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.IODataActionQueryOptionsConventionBuilder">
+            <summary>
+            Defines the behavior of an OData query options convention builder for an action.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.IODataActionQueryOptionsConventionBuilder.ControllerType">
+            <summary>
+            Gets the type of controller the convention builder is for.
+            </summary>
+            <value>The corresponding controller <see cref="T:System.Type">type</see>.</value>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.IODataActionQueryOptionsConventionBuilder.Action(System.Reflection.MethodInfo)">
+            <summary>
+            Gets or creates a convention builder for the specified controller action method.
+            </summary>
+            <param name="actionMethod">The controller action <see cref="T:System.Reflection.MethodInfo">method</see>
+            to get or create a convention for.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.IODataQueryOptionDescriptionProvider">
+            <summary>
+            Defines the behavior of an object that provides descriptions for OData query options.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.IODataQueryOptionDescriptionProvider.Describe(Microsoft.AspNet.OData.Query.AllowedQueryOptions,Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext)">
+            <summary>
+            Creates and returns a description for the specified OData query option using the provided context.
+            </summary>
+            <param name="queryOption">The <see cref="T:Microsoft.AspNet.OData.Query.AllowedQueryOptions">query option</see> to provide a description for.</param>
+            <param name="context">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">context</see> used to create the description.</param>
+            <returns>The description for the specified <paramref name="queryOption">query option</paramref>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.IODataQueryOptionsConvention">
+            <summary>
+            Defines the behavior of an OData query options convention.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.IODataQueryOptionsConvention.ApplyTo(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Applies the convention to the specified API description.
+            </summary>
+            <param name="apiDescription">The <see cref="T:System.Web.Http.Description.ApiDescription">API description</see> to apply the convention to.</param>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.IODataQueryOptionsConventionBuilder">
+            <summary>
+            Defines the behavior of an OData query options convention builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.IODataQueryOptionsConventionBuilder.Build(Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings)">
+            <summary>
+            Creates and returns an OData query options convention.
+            </summary>
+            <param name="settings">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings">settings</see> used to build the convention.</param>
+            <returns>A new <see cref="T:Microsoft.AspNet.OData.Builder.IODataQueryOptionsConvention">OData query options convention</see>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderBase">
+            <summary>
+            Represents an OData controller action query options convention builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderBase"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderBase.ValidationSettings">
+            <summary>
+            Gets the validation settings used for the query options convention.
+            </summary>
+            <value>The <see cref="T:Microsoft.AspNet.OData.Query.ODataValidationSettings">validation settings</see> for the convention.</value>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderBase.Build(Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection">
+            <summary>
+            Represents a collection of OData controller action query option convention builders.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection.#ctor(Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection"/> class.
+            </summary>
+            <param name="controllerBuilder">The associated <see cref="T:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder">controller convention builder</see>.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection.GetOrAdd(System.Reflection.MethodInfo)">
+            <summary>
+            Gets or adds a controller action convention builder for the specified method.
+            </summary>
+            <param name="actionMethod">The controller action method to get or add the convention builder for.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder">controller action convention builder</see>.</returns>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection.Count">
+            <summary>
+            Gets a count of the controller action convention builders in the collection.
+            </summary>
+            <value>The total number of controller action convention builders in the collection.</value>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection.TryGetValue(System.Reflection.MethodInfo,Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder@)">
+            <summary>
+            Attempts to retrieve the controller action convention builder for the specified method.
+            </summary>
+            <param name="actionMethod">The controller action method to get the convention builder for.</param>
+            <param name="actionBuilder">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder">controller action convention builder</see> or <c>null</c>.</param>
+            <returns>True if the <paramref name="actionBuilder">action builder</paramref> is successfully retrieved; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection.GetEnumerator">
+            <summary>
+            Returns an iterator that enumerates the controller action convention builders in the collection.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator"/> object.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder">
+            <summary>
+            Represents an OData controller action query options convention builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.#ctor(Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/> class.
+            </summary>
+            <param name="controllerBuilder">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder">controller builder</see>
+            the action builder belongs to.</param>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.ControllerBuilder">
+            <summary>
+            Gets the controller builder the action builder belongs to.
+            </summary>
+            <value>The associated <see cref="T:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder"/>.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.ControllerType">
+            <summary>
+            Gets the type of controller the convention builder is for.
+            </summary>
+            <value>The corresponding controller <see cref="T:System.Type">type</see>.</value>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.Action(System.Reflection.MethodInfo)">
+            <summary>
+            Gets or creates the convention builder for the specified controller action method.
+            </summary>
+            <param name="actionMethod">The <see cref="T:System.Reflection.MethodInfo">method</see> representing the controller action.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.Use(Microsoft.AspNet.OData.Query.ODataValidationSettings)">
+            <summary>
+            Uses the specified validation settings for the convention.
+            </summary>
+            <param name="validationSettings">The <see cref="T:Microsoft.AspNet.OData.Query.ODataValidationSettings">validation settings</see> to use.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.Allow(Microsoft.AspNet.OData.Query.AllowedArithmeticOperators)">
+            <summary>
+            Allows the specified arithmetic operators.
+            </summary>
+            <param name="arithmeticOperators">One or more <see cref="T:Microsoft.AspNet.OData.Query.AllowedArithmeticOperators">allowed arithmetic operators</see>.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.Allow(Microsoft.AspNet.OData.Query.AllowedFunctions)">
+            <summary>
+            Allows the specified functions.
+            </summary>
+            <param name="functions">One or more <see cref="T:Microsoft.AspNet.OData.Query.AllowedFunctions">allowed functions</see>.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.Allow(Microsoft.AspNet.OData.Query.AllowedLogicalOperators)">
+            <summary>
+            Allows the specified logical operators.
+            </summary>
+            <param name="logicalOperators">One or more <see cref="T:Microsoft.AspNet.OData.Query.AllowedLogicalOperators">allowed logical operators</see>.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.Allow(Microsoft.AspNet.OData.Query.AllowedQueryOptions)">
+            <summary>
+            Allows the specified query options.
+            </summary>
+            <param name="queryOptions">One or more <see cref="T:Microsoft.AspNet.OData.Query.AllowedQueryOptions">allowed query options</see>.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.AllowSkip(System.Int32)">
+            <summary>
+            Allows the $skip query option.
+            </summary>
+            <param name="max">The maximum value of the $skip query option or zero to indicate no maximum.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.AllowTop(System.Int32)">
+            <summary>
+            Allows the $top query option.
+            </summary>
+            <param name="max">The maximum value of the $top query option or zero to indicate no maximum.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.AllowExpand(System.Int32)">
+            <summary>
+            Allows the $expand query option.
+            </summary>
+            <param name="maxDepth">The maximum depth of the $expand query option or zero to indicate the default.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.AllowAnyAll(System.Int32)">
+            <summary>
+            Allows the 'Any' and 'All' functions in the $filter query option.
+            </summary>
+            <param name="maxExpressionDepth">The maximum expression depth of the 'Any' or 'All' function in a query or zero to indicate the default.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.AllowFilter(System.Int32)">
+            <summary>
+            Allows the $filter query option.
+            </summary>
+            <param name="maxNodeCount">The maximum number of nodes in the $filter query option or zero to indicate the default.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder.AllowOrderBy(System.Int32,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Allows the $orderby query option.
+            </summary>
+            <param name="maxNodeCount">The maximum number of expressions in the $orderby query option or zero to indicate the default.</param>
+            <param name="properties">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of property names that can appear in the $orderby query option.
+            An empty sequence indicates that any property can appear in the $orderby query option.</param>
+            <returns>The original <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder">
+            <summary>
+            Represents an OData query options convention builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder"/> class.
+            </summary>
+            <param name="controllerType">The <see cref="T:System.Type">type</see> of controller the convention builder is for.</param>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder.ControllerType">
+            <summary>
+            Gets the type of controller the convention builder is for.
+            </summary>
+            <value>The corresponding controller <see cref="T:System.Type">type</see>.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder.ActionBuilders">
+            <summary>
+            Gets a collection of controller action convention builders.
+            </summary>
+            <value>A <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilderCollection">collection</see> of
+            <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder">controller action convention builders</see>.</value>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder.Action(System.Reflection.MethodInfo)">
+            <summary>
+            Gets or creates the convention builder for the specified controller action method.
+            </summary>
+            <param name="actionMethod">The <see cref="T:System.Reflection.MethodInfo">method</see> representing the controller action.</param>
+            <returns>A new or existing <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataControllerQueryOptionsConventionBuilder.Build(Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext">
+            <summary>
+            Represents the context used to describe a query option.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.#ctor(Microsoft.AspNet.OData.Query.ODataValidationSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext"/> class.
+            </summary>
+            <param name="validationSettings">The <see cref="T:Microsoft.AspNet.OData.Query.ODataValidationSettings">validation settings</see> to derive the description context from.</param>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.AllowedArithmeticOperators">
+            <summary>
+            Gets or sets the allowed arthmetic operators.
+            </summary>
+            <value>One or more of the <see cref="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.AllowedArithmeticOperators"/> values.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.AllowedFunctions">
+            <summary>
+            Gets or sets the allowed functions.
+            </summary>
+            <value>One or more of the <see cref="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.AllowedFunctions"/> values.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.AllowedLogicalOperators">
+            <summary>
+            Gets or sets the allowed logical operators.
+            </summary>
+            <value>One or more of the <see cref="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.AllowedLogicalOperators"/> values.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.AllowedSelectProperties">
+            <summary>
+            Gets the names of properties that can be selected.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IList`1">list</see> of selectable property names.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.AllowedExpandProperties">
+            <summary>
+            Gets the names of properties that can be expanded.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IList`1">list</see> of expandable property names.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.AllowedFilterProperties">
+            <summary>
+            Gets the names of properties that can be filtered.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IList`1">list</see> of filterable property names.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.AllowedOrderByProperties">
+            <summary>
+            Gets the names of properties that can be sorted.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.IList`1">list</see> of sortable property names.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.MaxOrderByNodeCount">
+            <summary>
+            Gets or sets the maximum number of expressions that can be present in the $orderby query option.
+            </summary>
+            <value>The maximum number of expressions that can be present in the $orderby query option.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.MaxAnyAllExpressionDepth">
+            <summary>
+            Gets or sets the maximum depth of the Any or All elements nested inside the query.
+            </summary>
+            <value>The maximum depth of the Any or All elements nested inside the query.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.MaxNodeCount">
+            <summary>
+            Gets or sets the maximum number of the nodes inside the $filter syntax tree.
+            </summary>
+            <value>The maximum number of the nodes inside the $filter syntax tree.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.MaxSkip">
+            <summary>
+            Gets or sets the max value of $skip that a client can request.
+            </summary>
+            <value>The max value of $skip that a client can request.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.MaxTop">
+            <summary>
+            Gets or sets the max value of $top that a client can request.
+            </summary>
+            <value>The max value of $top that a client can request.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionDescriptionContext.MaxExpansionDepth">
+            <summary>
+            Gets or sets the max expansion depth for the $expand query option.
+            </summary>
+            <value>The max expansion depth for the $expand query option.</value>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings">
+            <summary>
+            Represents the settings for OData query options.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings.NoDollarPrefix">
+            <summary>
+            Gets or sets a value indicating whether query options have the system "$" prefix.
+            </summary>
+            <value>True if the OData query options use the "$" prefix; otherwise, false. The default
+            value is <c>false</c>.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.Builder.ODataQueryOptionSettings.DescriptionProvider">
+            <summary>
+            Gets or sets the provider used to describe query options.
+            </summary>
+            <value>The <see cref="T:Microsoft.AspNet.OData.Builder.IODataQueryOptionDescriptionProvider">provider</see> used to describe OData query options.</value>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.TypeExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:System.Type"/> class.
+            </summary>
+            <summary>
+            Provides extension methods for the <see cref="T:System.Type"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.TypeExtensions.SubstituteIfNecessary(System.Type,Microsoft.AspNet.OData.TypeSubstitutionContext)">
+            <summary>
+            Substitutes the specified type, if required.
+            </summary>
+            <param name="type">The <see cref="T:System.Type">type</see> to be evaluated.</param>
+            <param name="context">The current <see cref="T:Microsoft.AspNet.OData.TypeSubstitutionContext">type substitution context</see>.</param>
+            <returns>The original <paramref name="type"/> or a substitution <see cref="T:System.Type">type</see> based on the
+            provided <paramref name="context"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.IModelTypeBuilder">
+            <summary>
+            Defines the behavior of a model type builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.IModelTypeBuilder.NewStructuredType(Microsoft.OData.Edm.IEdmStructuredType,System.Type,Microsoft.Web.Http.ApiVersion,Microsoft.OData.Edm.IEdmModel)">
+            <summary>
+            Creates and returns a new structured type given the specified structured type, CLR type, and API version.
+            </summary>
+            <param name="structuredType">The <see cref="T:Microsoft.OData.Edm.IEdmStructuredType">structured type</see> to evaluate.</param>
+            <param name="clrType">The CLR <see cref="T:System.Type">type</see> mapped to the <paramref name="structuredType">structured type</paramref>.</param>
+            <param name="apiVersion">The <see cref="T:Microsoft.Web.Http.ApiVersion">API version</see> associated with the type mapping.</param>
+            <param name="edmModel">The <see cref="T:Microsoft.OData.Edm.IEdmModel">EdmModel</see> the structured type belongs to.</param>
+            <returns>The original <paramref name="clrType">CLR type</paramref> or a new, dynamically generated substitute <see cref="T:System.Type">type</see>
+            that is a subset of the original <paramref name="clrType">CLR type</paramref>, but maps one-to-one with the
+            <paramref name="structuredType">structured type</paramref>.</returns>
+            <remarks>If a substitution is not required, the original <paramref name="clrType">CLR type</paramref> is returned. When a substitution
+            <see cref="T:System.Type">type</see> is generated, it is performed only once per <paramref name="apiVersion">API version</paramref>.</remarks>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.IModelTypeBuilder.NewActionParameters(System.IServiceProvider,Microsoft.OData.Edm.IEdmAction,Microsoft.Web.Http.ApiVersion,System.String)">
+            <summary>
+            Creates an returns a strongly-typed definition for OData action parameters.
+            </summary>
+            <param name="services">The <see cref="T:System.IServiceProvider">services</see> needed to potentially substitute types.</param>
+            <param name="action">The defining <see cref="T:Microsoft.OData.Edm.IEdmAction">action</see>.</param>
+            <param name="apiVersion">The <see cref="T:Microsoft.Web.Http.ApiVersion">API version</see> of the <paramref name="action"/> to create the parameter type for.</param>
+            <param name="controllerName">The name of the controller that defines the action. Necessary for generating unique parameter types.</param>
+            <returns>A strong <see cref="T:System.Type">type</see> definition for the OData <paramref name="action"/> parameters.</returns>
+            <remarks><see cref="T:Microsoft.AspNet.OData.ODataActionParameters">OData action parameters</see> are modeled as a <see cref="T:System.Collections.Generic.Dictionary`2">dictionary</see>,
+            which is difficult to use effectively by documentation tools such as the API Explorer. The corresponding type is generated only once per
+            <paramref name="apiVersion">API version</paramref>.</remarks>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.DefaultModelTypeBuilder">
+            <summary>
+            Represents the default model type builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.DefaultModelTypeBuilder.NewStructuredType(Microsoft.OData.Edm.IEdmStructuredType,System.Type,Microsoft.Web.Http.ApiVersion,Microsoft.OData.Edm.IEdmModel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.AspNet.OData.DefaultModelTypeBuilder.NewActionParameters(System.IServiceProvider,Microsoft.OData.Edm.IEdmAction,Microsoft.Web.Http.ApiVersion,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.AspNet.OData.ODataValue`1">
+            <summary>
+            Represents a placeholder for describing OData responses that are represented as an
+            object with a single name/value pair whose name is "value".
+            </summary>
+            <typeparam name="T">The <see cref="T:System.Type">type</see> of content in the "value".</typeparam>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.ODataValue`1.Value">
+            <summary>
+            Gets or sets the OData response content in the "value".
+            </summary>
+            <value>The response content within "value".</value>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.OriginalTypeAttribute">
+            <summary>
+            Provides metadata about the original type when a type is substituted.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.OriginalTypeAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.OriginalTypeAttribute"/> class.
+            </summary>
+            <param name="type">The original type.</param>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.OriginalTypeAttribute.Type">
+            <summary>
+            Gets the original type.
+            </summary>
+            <value>The original <see cref="P:Microsoft.AspNet.OData.OriginalTypeAttribute.Type">type</see>.</value>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.PropertyDependency">
+            <summary>
+            Represents a dependency on a type of a property that has not been built yet.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.PropertyDependency.#ctor(Microsoft.AspNet.OData.EdmTypeKey,System.Boolean,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.PropertyDependency"/> class.
+            </summary>
+            <param name="dependentOnTypeKey">The key of the type the property has a dependency on.</param>
+            <param name="propertyName">The name of the property.</param>
+            <param name="isCollection">Whether the property is a collection or not.</param>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.PropertyDependency.DependentType">
+            <summary>
+            Gets or sets the type that has a dependent property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.PropertyDependency.DependentOnTypeKey">
+            <summary>
+            Gets the key of the type the property has a dependency on.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.PropertyDependency.PropertyName">
+            <summary>
+            Gets the name of the property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.PropertyDependency.IsCollection">
+            <summary>
+            Gets a value indicating whether the property is a collection.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNet.OData.TypeSubstitutionContext">
+            <summary>
+            Represents a type substitution context.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.TypeSubstitutionContext.#ctor(Microsoft.OData.Edm.IEdmModel,Microsoft.AspNet.OData.IModelTypeBuilder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.TypeSubstitutionContext"/> class.
+            </summary>
+            <param name="model">The <see cref="T:Microsoft.OData.Edm.IEdmModel">EDM model</see> to compare against.</param>
+            <param name="modelTypeBuilder">The associated <see cref="T:Microsoft.AspNet.OData.IModelTypeBuilder">model type builder</see>.</param>
+        </member>
+        <member name="M:Microsoft.AspNet.OData.TypeSubstitutionContext.#ctor(System.IServiceProvider,Microsoft.AspNet.OData.IModelTypeBuilder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.AspNet.OData.TypeSubstitutionContext"/> class.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider">service provider</see> that the
+            <see cref="T:Microsoft.OData.Edm.IEdmModel">EDM model</see> can be resolved from.</param>
+            <param name="modelTypeBuilder">The associated <see cref="T:Microsoft.AspNet.OData.IModelTypeBuilder">model type builder</see>.</param>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.TypeSubstitutionContext.Model">
+            <summary>
+            Gets the source Entity Data Model (EDM).
+            </summary>
+            <value>The associated <see cref="T:Microsoft.OData.Edm.IEdmModel">EDM model</see> compared against for substitutions.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.TypeSubstitutionContext.ApiVersion">
+            <summary>
+            Gets API version associated with the source model.
+            </summary>
+            <value>The associated <see cref="P:Microsoft.AspNet.OData.TypeSubstitutionContext.ApiVersion">API version</see>.</value>
+        </member>
+        <member name="P:Microsoft.AspNet.OData.TypeSubstitutionContext.ModelTypeBuilder">
+            <summary>
+            Gets the model type builder used to create substitution types.
+            </summary>
+            <value>The associated <see cref="T:Microsoft.AspNet.OData.IModelTypeBuilder">model type builder</see>.</value>
+        </member>
+        <member name="T:Microsoft.SR">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.ActionMethodNotFound">
+            <summary>
+              Looks up a localized string similar to An action method with the name &apos;{0}&apos; could not be found. The method must be public, non-static, and not have the NonActionAttribute applied..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.AllowedArithmeticOperatorsDesc">
+            <summary>
+              Looks up a localized string similar to The allowed arithmetic operators are: {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.AllowedFunctionsDesc">
+            <summary>
+              Looks up a localized string similar to The allowed functions are: {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.AllowedLogicalOperatorsDesc">
+            <summary>
+              Looks up a localized string similar to The allowed logical operators are: {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.AllowedPropertiesDesc">
+            <summary>
+              Looks up a localized string similar to The allowed properties are: {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.AmbiguousActionMethod">
+            <summary>
+              Looks up a localized string similar to Multiple action methods with the name &apos;{0}&apos; were found, but could not be resolved using the provided arguments..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.ConventionStyleMismatch">
+            <summary>
+              Looks up a localized string similar to OData query option conventions cannot be applied to the controller type {0} using both typed and untyped convention builders..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.CountQueryOptionDesc">
+            <summary>
+              Looks up a localized string similar to Indicates whether the total count of items within a collection are returned in the result..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.ExpandQueryOptionDesc">
+            <summary>
+              Looks up a localized string similar to Indicates the related entities to be represented inline..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.FilterQueryOptionDesc">
+            <summary>
+              Looks up a localized string similar to Restricts the set of items returned..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.InvalidActionMethodExpression">
+            <summary>
+              Looks up a localized string similar to The expression &apos;{0}&apos; must refer to a controller action method..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.MaxDepthDesc">
+            <summary>
+              Looks up a localized string similar to The maximum depth is {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.MaxExpressionDesc">
+            <summary>
+              Looks up a localized string similar to The maximum number of expressions is {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.MaxValueDesc">
+            <summary>
+              Looks up a localized string similar to The maximum value is {0}..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.MultipleQueryOptionsNotAllowed">
+            <summary>
+              Looks up a localized string similar to Only a single, valid query option may be specified..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.NullContainer">
+            <summary>
+              Looks up a localized string similar to The container builder created by the container builder factory must not be null..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.OrderByQueryOptionDesc">
+            <summary>
+              Looks up a localized string similar to Specifies the order in which items are returned..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.RequiredInterfaceNotImplemented">
+            <summary>
+              Looks up a localized string similar to The type {0} does not implement the {1} interface..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.SelectQueryOptionDesc">
+            <summary>
+              Looks up a localized string similar to Limits the properties returned in the result..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.SkipQueryOptionDesc">
+            <summary>
+              Looks up a localized string similar to Excludes the specified number of items of the queried collection from the result..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.TopQueryOptionDesc">
+            <summary>
+              Looks up a localized string similar to Limits the number of items returned from a collection..
+            </summary>
+        </member>
+        <member name="P:Microsoft.SR.UnsupportedQueryOption">
+            <summary>
+              Looks up a localized string similar to The query option ${0} is not supported..
+            </summary>
+        </member>
+        <member name="T:Microsoft.Web.Http.Description.ODataApiExplorer">
+            <summary>
+            Explores the URI space of versioned OData services based on routes, controllers, and actions available in the system.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Web.Http.Description.ODataApiExplorer.#ctor(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Web.Http.Description.ODataApiExplorer"/> class.
+            </summary>
+            <param name="configuration">The current <see cref="T:System.Web.Http.HttpConfiguration">HTTP configuration</see>.</param>
+        </member>
+        <member name="M:Microsoft.Web.Http.Description.ODataApiExplorer.#ctor(System.Web.Http.HttpConfiguration,Microsoft.Web.Http.Description.ODataApiExplorerOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Web.Http.Description.ODataApiExplorer"/> class.
+            </summary>
+            <param name="configuration">The current <see cref="T:System.Web.Http.HttpConfiguration">HTTP configuration</see>.</param>
+            <param name="options">The associated <see cref="T:Microsoft.Web.Http.Description.ODataApiExplorerOptions">API explorer options</see>.</param>
+        </member>
+        <member name="P:Microsoft.Web.Http.Description.ODataApiExplorer.Options">
+            <summary>
+            Gets the options associated with the API explorer.
+            </summary>
+            <value>The <see cref="T:Microsoft.Web.Http.Description.ODataApiExplorerOptions">API explorer options</see>.</value>
+        </member>
+        <member name="P:Microsoft.Web.Http.Description.ODataApiExplorer.ModelTypeBuilder">
+            <summary>
+            Gets the model type builder used by the API explorer.
+            </summary>
+            <value>The associated <see cref="T:Microsoft.AspNet.OData.IModelTypeBuilder">mode type builder</see>.</value>
+        </member>
+        <member name="M:Microsoft.Web.Http.Description.ODataApiExplorer.ShouldExploreAction(System.String,System.Web.Http.Controllers.HttpActionDescriptor,System.Web.Http.Routing.IHttpRoute,Microsoft.Web.Http.ApiVersion)">
+            <summary>
+            Determines whether the action should be considered.
+            </summary>
+            <param name="actionRouteParameterValue">The action route parameter value.</param>
+            <param name="actionDescriptor">The associated <see cref="T:System.Web.Http.Controllers.HttpActionDescriptor">action descriptor</see>.</param>
+            <param name="route">The associated <see cref="T:System.Web.Http.Routing.IHttpRoute">route</see>.</param>
+            <param name="apiVersion">The <see cref="T:Microsoft.Web.Http.ApiVersion">API version</see> to consider the controller for.</param>
+            <returns>True if the action should be explored; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.Web.Http.Description.ODataApiExplorer.ShouldExploreController(System.String,System.Web.Http.Controllers.HttpControllerDescriptor,System.Web.Http.Routing.IHttpRoute,Microsoft.Web.Http.ApiVersion)">
+            <summary>
+            Determines whether the controller should be considered.
+            </summary>
+            <param name="controllerRouteParameterValue">The controller route parameter value.</param>
+            <param name="controllerDescriptor">The associated <see cref="T:System.Web.Http.Controllers.HttpControllerDescriptor">controller descriptor</see>.</param>
+            <param name="route">The associated <see cref="T:System.Web.Http.Routing.IHttpRoute">route</see>.</param>
+            <param name="apiVersion">The <see cref="T:Microsoft.Web.Http.ApiVersion">API version</see> to consider the controller for.</param>
+            <returns>True if the controller should be explored; otherwise, false.</returns>
+        </member>
+        <member name="M:Microsoft.Web.Http.Description.ODataApiExplorer.ExploreRouteControllers(System.Collections.Generic.IDictionary{System.String,System.Web.Http.Controllers.HttpControllerDescriptor},System.Web.Http.Routing.IHttpRoute,Microsoft.Web.Http.ApiVersion)">
+            <summary>
+            Explores controllers that do not use direct routes (aka "attribute" routing).
+            </summary>
+            <param name="controllerMappings">The <see cref="T:System.Collections.Generic.IDictionary`2">collection</see> of controller mappings.</param>
+            <param name="route">The <see cref="T:System.Web.Http.Routing.IHttpRoute">route</see> to explore.</param>
+            <param name="apiVersion">The <see cref="T:Microsoft.Web.Http.ApiVersion">API version</see> to explore.</param>
+            <returns>The <see cref="T:System.Collections.ObjectModel.Collection`1">collection</see> of discovered <see cref="T:Microsoft.Web.Http.Description.VersionedApiDescription">API descriptions</see>.</returns>
+        </member>
+        <member name="M:Microsoft.Web.Http.Description.ODataApiExplorer.ExploreQueryOptions(System.Collections.Generic.IEnumerable{Microsoft.Web.Http.Description.VersionedApiDescription},Microsoft.OData.UriParser.ODataUriResolver)">
+            <summary>
+            Explores the OData query options for the specified API descriptions.
+            </summary>
+            <param name="apiDescriptions">The <see cref="T:System.Collections.Generic.IEnumerable`1">sequence</see> of <see cref="T:Microsoft.Web.Http.Description.VersionedApiDescription">API descriptions</see> to explore.</param>
+            <param name="uriResolver">The associated <see cref="T:Microsoft.OData.UriParser.ODataUriResolver">OData URI resolver</see>.</param>
+        </member>
+        <member name="T:Microsoft.Web.Http.Description.ODataApiExplorerOptions">
+            <content>
+            Provides additional implementation specific to ASP.NET Web API.
+            </content>
+            <summary>
+            Represents the possible API versioning options for an OData API explorer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Web.Http.Description.ODataApiExplorerOptions.#ctor(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Web.Http.Description.ODataApiExplorerOptions"/> class.
+            </summary>
+            <param name="configuration">The current <see cref="T:System.Web.Http.HttpConfiguration">configuration</see> associated with the options.</param>
+        </member>
+        <member name="P:Microsoft.Web.Http.Description.ODataApiExplorerOptions.UseApiExplorerSettings">
+            <summary>
+            Gets or sets a value indicating whether the API explorer settings are honored.
+            </summary>
+            <value>True if the <see cref="T:System.Web.Http.Description.ApiExplorerSettingsAttribute"/> is ignored; otherwise, false.
+            The default value is <c>false</c>.</value>
+            <remarks>Most OData services inherit from the <see cref="T:Microsoft.AspNet.OData.ODataController"/>, which excludes the controller
+            from the API explorer by setting <see cref="P:System.Web.Http.Description.ApiExplorerSettingsAttribute.IgnoreApi"/>
+            to <c>true</c>. By setting this property to <c>false</c>, these settings are ignored instead of reapplying
+            <see cref="P:System.Web.Http.Description.ApiExplorerSettingsAttribute.IgnoreApi"/> with a value of <c>false</c> to all OData controllers.</remarks>
+        </member>
+        <member name="P:Microsoft.Web.Http.Description.ODataApiExplorerOptions.UseQualifiedOperationNames">
+            <summary>
+            Gets or sets a value indicating whether qualified names are used when building URLs for operations (e.g. actions and functions).
+            </summary>
+            <value>True if qualified names are used when building URLs for operations; otherwise, false. The default value is <c>false</c>.</value>
+        </member>
+        <member name="P:Microsoft.Web.Http.Description.ODataApiExplorerOptions.QueryOptions">
+            <summary>
+            Gets or sets the convention builder used to describe OData query options.
+            </summary>
+            <value>An <see cref="T:Microsoft.AspNet.OData.Builder.ODataActionQueryOptionsConventionBuilder">OData query option convention builder</see>.</value>
+        </member>
+        <member name="M:Microsoft.TypeExtensions.GetTypeDisplayName(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Pretty print a type name.
+            </summary>
+            <param name="type">The <see cref="T:System.Type"/>.</param>
+            <param name="fullName"><c>true</c> to print a fully qualified name.</param>
+            <param name="includeGenericParameterNames"><c>true</c> to include generic parameter names.</param>
+            <returns>The pretty printed type name.</returns>
+        </member>
+        <member name="T:System.Web.Http.Description.ApiDescriptionExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:System.Web.Http.Description.ApiDescription"/> class.
+            </summary>
+        </member>
+        <member name="M:System.Web.Http.Description.ApiDescriptionExtensions.EdmModel(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the entity data model (EDM) associated with the API description.
+            </summary>
+            <param name="apiDescription">The <see cref="T:System.Web.Http.Description.ApiDescription">API description</see> to get the model for.</param>
+            <returns>The associated <see cref="T:Microsoft.OData.Edm.IEdmModel">EDM model</see> or <c>null</c> if there is no associated model.</returns>
+        </member>
+        <member name="M:System.Web.Http.Description.ApiDescriptionExtensions.EntitySet(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the entity set associated with the API description.
+            </summary>
+            <param name="apiDescription">The <see cref="T:System.Web.Http.Description.ApiDescription">API description</see> to get the entity set for.</param>
+            <returns>The associated <see cref="T:Microsoft.OData.Edm.IEdmEntitySet">entity set</see> or <c>null</c> if there is no associated entity set.</returns>
+        </member>
+        <member name="M:System.Web.Http.Description.ApiDescriptionExtensions.EntityType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the entity type associated with the API description.
+            </summary>
+            <param name="apiDescription">The <see cref="T:System.Web.Http.Description.ApiDescription">API description</see> to get the entity type for.</param>
+            <returns>The associated <see cref="T:Microsoft.OData.Edm.IEdmEntityType">entity type</see> or <c>null</c> if there is no associated entity type.</returns>
+        </member>
+        <member name="M:System.Web.Http.Description.ApiDescriptionExtensions.Operation(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the operation associated with the API description.
+            </summary>
+            <param name="apiDescription">The <see cref="T:System.Web.Http.Description.ApiDescription">API description</see> to get the operation for.</param>
+            <returns>The associated <see cref="T:Microsoft.OData.Edm.IEdmOperation">EDM operation</see> or <c>null</c> if there is no associated operation.</returns>
+        </member>
+        <member name="T:System.Web.Http.HttpConfigurationExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:System.Web.Http.HttpConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="M:System.Web.Http.HttpConfigurationExtensions.AddODataApiExplorer(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Adds or replaces the configured <see cref="T:System.Web.Http.Description.IApiExplorer">API explorer</see> with an implementation that supports OData and API versioning.
+            </summary>
+            <param name="configuration">The <see cref="T:System.Web.Http.HttpConfiguration">configuration</see> used to add the API explorer.</param>
+            <returns>The newly registered <see cref="T:Microsoft.Web.Http.Description.ODataApiExplorer">versioned OData API explorer</see>.</returns>
+            <remarks>This method always replaces the <see cref="T:System.Web.Http.Description.IApiExplorer"/> with a new instance of <see cref="T:Microsoft.Web.Http.Description.ODataApiExplorer"/>. This method also
+            configures the <see cref="T:Microsoft.Web.Http.Description.ODataApiExplorer"/> to not use <see cref="T:System.Web.Http.Description.ApiExplorerSettingsAttribute"/>, which enables exploring all OData
+            controllers without additional configuration.</remarks>
+        </member>
+        <member name="M:System.Web.Http.HttpConfigurationExtensions.AddODataApiExplorer(System.Web.Http.HttpConfiguration,System.Action{Microsoft.Web.Http.Description.ODataApiExplorerOptions})">
+            <summary>
+            Adds or replaces the configured <see cref="T:System.Web.Http.Description.IApiExplorer">API explorer</see> with an implementation that supports OData and API versioning.
+            </summary>
+            <param name="configuration">The <see cref="T:System.Web.Http.HttpConfiguration">configuration</see> used to add the API explorer.</param>
+            <param name="setupAction">An <see cref="T:System.Action`1">action</see> used to configure the provided options.</param>
+            <returns>The newly registered <see cref="T:Microsoft.Web.Http.Description.ODataApiExplorer">versioned API explorer</see>.</returns>
+            <remarks>This method always replaces the <see cref="T:System.Web.Http.Description.IApiExplorer"/> with a new instance of <see cref="T:Microsoft.Web.Http.Description.ODataApiExplorer"/>.</remarks>
+        </member>
+    </members>
+</doc>

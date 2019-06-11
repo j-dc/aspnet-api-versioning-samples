@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J-DC.Api.Versioning.Samples
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J-DC.Api.Versioning.Samples.MultiEndpoint_03", "J-DC.Api.Versioning.Samples.MultiEndpoint_03\J-DC.Api.Versioning.Samples.MultiEndpoint_03.csproj", "{8ACC3596-E0F7-42F8-8F7E-D3E47D93B642}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J-DC.Api.Versioning.Samples.CustomBuilder", "J-DC.Api.Versioning.Samples.CustomBuilder\J-DC.Api.Versioning.Samples.CustomBuilder.csproj", "{E1638E6B-3BE4-49F8-814B-74AF40012026}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8ACC3596-E0F7-42F8-8F7E-D3E47D93B642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8ACC3596-E0F7-42F8-8F7E-D3E47D93B642}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8ACC3596-E0F7-42F8-8F7E-D3E47D93B642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1638E6B-3BE4-49F8-814B-74AF40012026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1638E6B-3BE4-49F8-814B-74AF40012026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1638E6B-3BE4-49F8-814B-74AF40012026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1638E6B-3BE4-49F8-814B-74AF40012026}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

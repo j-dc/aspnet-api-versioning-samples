@@ -178,10 +178,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="Data\V2\Controllers\ValueController.cs" />
-    <Compile Include="Data\V2\Models\ValueModel.cs" />
-    <Compile Include="Data\V1\Controllers\ValueController.cs" />
-    <Compile Include="Data\V1\Models\ValueModel.cs" />
+    <Compile Include="Data\V18\Controllers\ValueController.cs" />
+    <Compile Include="Data\V18\Models\ValueModel.cs" />
+    <Compile Include="Data\V17\Controllers\ValueController.cs" />
+    <Compile Include="Data\V17\Models\ValueModel.cs" />
     <Compile Include="Data\DataModelConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>

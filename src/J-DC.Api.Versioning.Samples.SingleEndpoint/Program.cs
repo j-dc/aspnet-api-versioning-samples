@@ -16,10 +16,19 @@ namespace JDC.Api.Versioning.Samples.SingleEndpoint {
                 Console.WriteLine("Content root path: " + Startup.ContentRootPath);
                 Console.WriteLine("Now listening on: " + Url);
                 Console.WriteLine("Application started. Press Ctrl+C to shut down.");
+                Console.WriteLine("Starting browser");
+
+                Process.Start(Url + "Data/V17");
+                Process.Start(Url + "Data/V18");
+                Process.Start(Url + "Data/V17/Value");
+                Process.Start(Url + "Data/V18/Value");
+
+                Thread.Sleep(5000);
+
                 Process.Start(Url + "Data/V1");
-                Process.Start(Url + "Data/V2");
                 Process.Start(Url + "Data/V1/Value");
-                Process.Start(Url + "Data/V2/Value");
+
+
                 resetEvent.WaitOne();
             }
 

@@ -1,4 +1,4 @@
-﻿namespace JDC.Api.Versioning.Samples.SingleEndpoint.Data.V1.Models {
+﻿namespace JDC.Api.Versioning.Samples.SingleEndpoint.Data.V17.Models {
 
     public class ValueModel {
         public int ID { get; set; }

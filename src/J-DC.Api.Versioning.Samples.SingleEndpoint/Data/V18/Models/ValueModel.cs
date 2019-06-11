@@ -1,4 +1,4 @@
-﻿namespace JDC.Api.Versioning.Samples.SingleEndpoint.Data.V2.Models {
+﻿namespace JDC.Api.Versioning.Samples.SingleEndpoint.Data.V18.Models {
 
     public class ValueModel {
 

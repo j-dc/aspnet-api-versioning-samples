@@ -21,7 +21,6 @@ namespace JDC.Api.Versioning.Samples.MultiEndpoint_01.MSVersioningMulti {
                 Console.WriteLine("Starting browser with OK urls");
 
 
-                Process.Start(Url + "index.html");
                 //--- OK urls ---
                 Process.Start(Url + "Data/V1");
                 Process.Start(Url + "Data/V2");
